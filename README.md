@@ -35,6 +35,3 @@
 >```
 
 >Nice. I like it. Let’s do it. It is an interesting project.
-
-
-<span style=" color: #69ADE6; font-family: ; font-weight: 100;">Profile</span>

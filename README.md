@@ -3,7 +3,8 @@
 
 
 <h1 align="center"><img src="https://user-images.githubusercontent.com/32780926/44932275-61e15d00-ad6d-11e8-8364-214d87c44258.png" alt="profile" width="200"/><br><span style=" color: #69ADE6
-;font-family: ; font-weight: 100;">Profile</span>
+;font-family: ; font-weight: 100;"><img width="104" alt="profile" src="https://user-images.githubusercontent.com/32780926/44947167-c0f8ad80-ae11-11e8-8b0a-45ae1e7a4749.png">
+</span>
 </h1>
 
 <p align="center">

@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="contributions" />
   </a>
   </a>
-  <a href="https://github.com/dhul-husni/profile/blob/master/license.md">
+  <a href="https://github.com/Dhul-Husni/profile/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license-mit" />
   </a>
 </p>

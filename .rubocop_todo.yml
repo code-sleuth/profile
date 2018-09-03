@@ -10,10 +10,10 @@
 # Cop supports --auto-correct.
 Layout/LeadingCommentSpace:
   Exclude:
-    - 'Rakefile'
+    - "Rakefile"
 
 # Offense count: 2
 Style/MixinUsage:
   Exclude:
-    - 'bin/setup'
-    - 'bin/update'
+    - "bin/setup"
+    - "bin/update"

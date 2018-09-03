@@ -43,8 +43,9 @@ group :development do
   # Access an interactive console on exception pages or
   # by calling 'console' anywhere in the code.
   gem "listen", ">= 3.0.5", "< 3.2"
-  gem "rubocop", "~> 0.58.2", require: false
-  gem "rubocop-rspec", "~> 1.29.1", require: false
+  gem "overcommit"
+  gem "rubocop", require: false
+  gem "rubocop-rspec", require: false
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"

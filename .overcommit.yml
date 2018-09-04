@@ -1,0 +1,31 @@
+verify_signatures: false
+CommitMsg:
+  CapitalizedSubject:
+    enabled: false
+
+  EmptyMessage:
+    enabled: false
+
+  TrailingPeriod:
+    enabled: true
+
+  TextWidth:
+    enabled: false
+
+PreCommit:
+  ALL:
+    on_warn: fail
+
+  MergeConflicts:
+    enabled: true
+
+  AuthorName:
+    enabled: false
+
+  YamlSyntax:
+    enabled: true
+
+  BundleCheck:
+    enabled: true
+  RuboCop:
+    enabled: true

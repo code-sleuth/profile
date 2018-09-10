@@ -1,0 +1,59 @@
+default: &defaults
+  docker:
+    - image: circleci/ruby:2.5.1-node-browsers
+      environment:
+        PG_HOST: localhost
+        PG_USER: circleci
+        RAILS_ENV: test
+        DATABASE_URL: postgresql://circleci@localhost/test_db
+    - image: postgres:9.6
+      POSTGRES_USER: circleci
+      POSTGRES_DB: //circleci@localhost/test_db
+      POSTGRES_PASSWORD: ""
+  dependencies:
+    pre:
+      - sudo gem install --no-ri --no-rdoc bundler
+  working_directory: ~/profile
+
+cmd_restore_cache: &cmd_restore_cache
+  restore_cache:
+    keys:
+    - profile-dependencies-{{ checksum "Gemfile.lock" }}
+    - profile-dependencies-
+
+cmd_install_dependencies: &cmd_install_dependencies
+  run:
+    name: Install Dependencies
+    command: |
+      bundle check --path=vendoe/bundle || bundle install --jobs=4 --retry=3 --path=vendor/bundle
+
+cmd_save_cache: &cmd_save_cache
+  save_cache:
+    key: profile-dependencies-{{ checksum "Gemfile.lock" }}
+    paths:
+      - ./vendor/bundle
+
+cmd_wait_for_postgres: &cmd_wait_for_postgres
+  run:
+    name: Waiting for PostgreSQL to be ready
+    command: |
+      dockerize -wait tcp://localhost:5432 -timeout 1m
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_restore_cache
+      - *cmd_install_dependencies
+      - *cmd_save_cache
+      - *cmd_wait_for_postgres
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+  
+      
